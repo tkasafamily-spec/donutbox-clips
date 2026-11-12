@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T08:07:46.340955+00:00",
+  "updated": "2026-11-12T08:19:02.818889+00:00",
   "app": "DonutBox",
   "targetChannel": "@drdonuttclips1st",
   "schedule": {
@@ -370,6 +370,24 @@
       "score": 77,
       "sourceVideo": "Rating Your Minecraft Roller Coasters",
       "createdAt": "2026-11-12T08:05:51.575364+00:00"
+    },
+    {
+      "id": "BMmCVdm0w84_17139",
+      "title": "“Wait, wait, wait” 💀",
+      "description": "“Wait, wait, wait” 💀\n\nClipped from DrDonut: ​\nFull video: https://youtu.be/BMmCVdm0w84\nMain channel: https://www.youtube.com/@drdonutt\n\n#shorts #drdonut #donutsmp #minecraft",
+      "tags": [
+        "drdonut",
+        "donut smp",
+        "minecraft",
+        "shorts",
+        "drdonut clips",
+        "donutsmp"
+      ],
+      "mp4Url": "https://github.com/tkasafamily-spec/donutbox-clips/releases/download/clips/BMmCVdm0w84_17139.mp4",
+      "durationSeconds": 47.3,
+      "score": 67,
+      "sourceVideo": "​",
+      "createdAt": "2026-11-12T08:16:03.388229+00:00"
     }
   ]
 }
