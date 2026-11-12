@@ -1,0 +1,14 @@
+{
+  "updated": "2026-11-12T06:11:04.918720+00:00",
+  "app": "DonutBox",
+  "targetChannel": "@drdonuttclips1st",
+  "schedule": {
+    "autoPost": true,
+    "postsPerDay": 10,
+    "hoursApart": 4.0,
+    "firstPostTime": "05:00",
+    "timeZone": "Australia/Sydney",
+    "privacy": "public"
+  },
+  "clips": []
+}
