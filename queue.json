@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T01:36:33.050980+00:00",
+  "updated": "2026-11-13T01:39:14.119101+00:00",
   "app": "DonutBox",
   "targetChannel": "@drdonuttclips1st",
   "schedule": {
@@ -11,6 +11,29 @@
     "privacy": "public"
   },
   "clips": [
+    {
+      "id": "iIvxI16xr4w_12993",
+      "title": "DrDonut Gets 1 Billion Dollars 💰",
+      "description": "DrDonut Gets 1 Billion Dollars 💰\n\nClipped from DrDonut: ​\nFull video: https://youtu.be/iIvxI16xr4w\nMain channel: https://www.youtube.com/@drdonutt\n\n#shorts #drdonut #donutsmp #minecraft #minecraftshorts",
+      "tags": [
+        "drdonut",
+        "donut smp",
+        "donutsmp",
+        "minecraft",
+        "minecraft shorts",
+        "drdonut clips",
+        "drdonut stream",
+        "drdonut funny",
+        "donut smp clips",
+        "shorts",
+        "gaming"
+      ],
+      "mp4Url": "https://github.com/tkasafamily-spec/donutbox-clips/releases/download/clips/iIvxI16xr4w_12993.mp4",
+      "durationSeconds": 10.4,
+      "score": 86,
+      "sourceVideo": "​",
+      "createdAt": "2026-11-13T01:37:07.073460+00:00"
+    },
     {
       "id": "iIvxI16xr4w_1561",
       "title": "DrDonut Gets A Trillion Dollar Donation 😱",
@@ -103,29 +126,6 @@
       "score": 82,
       "sourceVideo": "Rating Your Minecraft Roller Coasters",
       "createdAt": "2026-11-12T22:45:18.966411+00:00"
-    },
-    {
-      "id": "oafS9P4zFZo_2404",
-      "title": "DrDonut Reacts To Massive Minecraft Build 🤯",
-      "description": "DrDonut Reacts To Massive Minecraft Build 🤯\n\nClipped from DrDonut: Rating Your Minecraft Roller Coasters\nFull video: https://youtu.be/oafS9P4zFZo\nMain channel: https://www.youtube.com/@drdonutt\n\n#shorts #drdonut #donutsmp #minecraft #minecraftshorts",
-      "tags": [
-        "drdonut",
-        "donut smp",
-        "donutsmp",
-        "minecraft",
-        "minecraft shorts",
-        "drdonut clips",
-        "drdonut stream",
-        "drdonut funny",
-        "donut smp clips",
-        "shorts",
-        "gaming"
-      ],
-      "mp4Url": "https://github.com/tkasafamily-spec/donutbox-clips/releases/download/clips/oafS9P4zFZo_2404.mp4",
-      "durationSeconds": 14.2,
-      "score": 81,
-      "sourceVideo": "Rating Your Minecraft Roller Coasters",
-      "createdAt": "2026-11-12T22:06:14.578394+00:00"
     },
     {
       "id": "FgbAodKMzL0_450",
