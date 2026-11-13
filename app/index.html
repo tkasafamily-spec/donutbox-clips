@@ -1,17 +1,42 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>DonutBox</title>
-<meta name="robots" content="noindex"><link rel="icon" href="data:,">
+<meta name="description" content="Send a video, get Shorts made with captions, sound effects and music. Plus a Video Studio, thumbnails and AI effects. Free credits every week."><meta property="og:title" content="DonutBox"><meta property="og:description" content="Send a video, get Shorts made with captions, sound effects and music. Plus a Video Studio, thumbnails and AI effects. Free credits every week."><meta property="og:type" content="website"><meta name="theme-color" content="#8b5cf6"><link rel="icon" href="data:,">
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0c0a14;color:#f5f2fb;
-font:16px/1.5 system-ui,Segoe UI,sans-serif;text-align:center;padding:24px}a{color:#c4a6ff}
+font:16px/1.5 system-ui,Segoe UI,sans-serif;text-align:center;padding:24px}a,button{color:#c4a6ff}
+button{background:#2a1f4d;border:1px solid #8b5cf6;border-radius:10px;padding:10px 18px;font:inherit;cursor:pointer;margin-top:14px}
 .d{width:42px;height:42px;border-radius:50%;border:4px solid #2d2640;border-top-color:#8b5cf6;margin:0 auto 16px;
-animation:s 1s linear infinite}@keyframes s{to{transform:rotate(360deg)}}</style></head><body><div>
-<div class="d"></div><h1 style="font-size:22px;margin:0 0 6px">Opening DonutBox…</h1>
-<p id="m" style="color:#a9a1bb;margin:0">If nothing happens, <a id="go" href="https://saves-nickel-organisms-poem.trycloudflare.com">tap here</a>.</p></div>
+animation:s 1s linear infinite}@keyframes s{to{transform:rotate(360deg)}}</style></head><body><div style="max-width:420px">
+<div class="d" id="spin"></div><h1 id="h" style="font-size:22px;margin:0 0 6px">Opening DonutBox…</h1>
+<p id="m" style="color:#a9a1bb;margin:0">Checking it's on…</p>
+<noscript><p><a href="https://polyester-winning-achieve-dna.trycloudflare.com">Open DonutBox</a></p></noscript>
+<button id="again" hidden>Try again</button></div>
 <script>
-var fallback = "https://saves-nickel-organisms-poem.trycloudflare.com";
-function go(u){ document.getElementById("go").href = u; location.replace(u + location.hash); }
-fetch("https://api.github.com/repos/tkasafamily-spec/donutbox-clips/contents/app/link.json?t=" + Date.now(), {cache: "no-store"})
-  .then(function(r){ return r.json(); })
-  .then(function(j){ var d = JSON.parse(atob(j.content.replace(/\s/g, ""))); go(d.url || fallback); })
-  .catch(function(){ go(fallback); });
+var fallback = "https://polyester-winning-achieve-dna.trycloudflare.com", tries = 0;
+function offline(){
+  document.getElementById("spin").hidden = true;
+  document.getElementById("h").textContent = "DonutBox is off right now";
+  document.getElementById("m").textContent = tries < 3 ? "It's probably restarting or updating. This page opens it by itself as soon as it's back (it checks every 20 seconds)."
+    : "It's taking a while: the PC it runs on may be off. Keep this page open and it opens by itself when DonutBox is back.";
+  var b = document.getElementById("again"); b.hidden = false; b.onclick = start;
+  setTimeout(start, 20000);
+}
+function check(u){
+  var done = false, t = setTimeout(function(){ if (!done) { done = true; offline(); } }, 9000);
+  fetch(u + "/api/app/ping", {cache: "no-store"}).then(function(r){ return r.json(); }).then(function(j){
+    if (done) return; done = true; clearTimeout(t);
+    if (j && j.ok) location.replace(u + location.hash); else offline();
+  }).catch(function(){ if (!done) { done = true; clearTimeout(t); offline(); } });
+}
+function start(){
+  tries++;
+  document.getElementById("spin").hidden = false;
+  document.getElementById("again").hidden = true;
+  document.getElementById("h").textContent = "Opening DonutBox…";
+  document.getElementById("m").textContent = "Checking it's on…";
+  fetch("https://api.github.com/repos/tkasafamily-spec/donutbox-clips/contents/app/link.json?t=" + Date.now(), {cache: "no-store"})
+    .then(function(r){ return r.json(); })
+    .then(function(j){ var d = JSON.parse(atob(j.content.replace(/\s/g, ""))); check(d.url || fallback); })
+    .catch(function(){ check(fallback); });
+}
+start();
 </script></body></html>
