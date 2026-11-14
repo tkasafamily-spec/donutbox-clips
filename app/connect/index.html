@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>DonutBox</title><link rel="icon" href="data:,">
+<meta name="robots" content="noindex">
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0c0a14;color:#f5f2fb;
+font:16px/1.5 system-ui,Segoe UI,sans-serif;text-align:center;padding:24px}
+.d{width:42px;height:42px;border-radius:50%;border:4px solid #2d2640;border-top-color:#8b5cf6;margin:0 auto 16px;
+animation:s 1s linear infinite}@keyframes s{to{transform:rotate(360deg)}}</style></head><body><div style="max-width:420px">
+<div class="d"></div><h1 style="font-size:22px;margin:0 0 6px">Connecting your account</h1>
+<p style="color:#a9a1bb;margin:0">Taking you back to DonutBox…</p></div>
+<script>
+var q = location.search, port = "5173";
+function go(u){ location.replace(u.replace(/\/$/, "") + "/oauth/connect/callback" + q); }
+function local(){ go("http://127.0.0.1:" + port); }
+fetch("https://api.github.com/repos/tkasafamily-spec/donutbox-clips/contents/app/link.json?t=" + Date.now(), {cache: "no-store"})
+  .then(function(r){ return r.json(); })
+  .then(function(j){
+    var u = JSON.parse(atob(j.content.replace(/\s/g, ""))).url;
+    if (!u) return local();
+    var done = false, t = setTimeout(function(){ if (!done) { done = true; local(); } }, 8000);
+    fetch(u + "/api/app/ping", {cache: "no-store"}).then(function(r){ return r.json(); }).then(function(p){
+      if (done) return; done = true; clearTimeout(t); if (p && p.ok) go(u); else local();
+    }).catch(function(){ if (!done) { done = true; clearTimeout(t); local(); } });
+  }).catch(local);
+</script></body></html>
